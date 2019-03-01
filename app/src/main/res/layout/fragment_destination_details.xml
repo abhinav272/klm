@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="270dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsing"
+            android:layout_width="match_parent"
+            android:layout_height="270dp"
+            app:contentScrim="@color/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="30dp"
+                android:text="@string/txt_image_loading_placeholder"
+                android:textColor="@color/colorTextSecondary" />
+
+            <ImageView
+                android:id="@+id/iv_backdrop"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/nested_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="fill_vertical"
+        android:layout_margin="15dp"
+        android:layout_marginBottom="?attr/actionBarSize"
+        android:background="@drawable/bg_round_corner"
+        android:backgroundTint="@color/colorLightBackground"
+        android:clipChildren="false"
+        android:scrollbars="none"
+        app:behavior_overlapTop="30dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <RelativeLayout
+            android:layoutAnimation="@anim/layout_anim_fall_down"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="20dp">
+
+            <ImageView
+                android:id="@+id/iv_navigate"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/ic_directions" />
+
+            <TextView
+                android:id="@+id/tv_airport_placeholder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/lato_regular"
+                android:text="@string/txt_airport"
+                android:textAllCaps="true"
+                android:textColor="@color/colorTextSecondary" />
+
+            <TextView
+                android:id="@+id/tv_airport"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_airport_placeholder"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="60dp"
+                android:fontFamily="@font/lato_regular"
+                android:maxLines="2"
+                android:textAllCaps="false"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="16sp"
+                tools:text="Indra Gandhi International Airport, Delhi" />
+
+
+            <TextView
+                android:id="@+id/tv_country_placeholder"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_airport"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/lato_regular"
+                android:text="@string/txt_country"
+                android:textAllCaps="true"
+                android:textColor="@color/colorTextSecondary" />
+
+            <TextView
+                android:id="@+id/tv_country"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_country_placeholder"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/lato_regular"
+                android:maxLines="2"
+                android:textAllCaps="false"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="16sp"
+                tools:text="India" />
+
+
+            <TextView
+                android:id="@+id/tv_region_placeholder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_airport"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_toEndOf="@id/tv_country_placeholder"
+                android:fontFamily="@font/lato_regular"
+                android:text="@string/txt_region"
+                android:textAllCaps="true"
+                android:textColor="@color/colorTextSecondary" />
+
+            <TextView
+                android:id="@+id/tv_region"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_region_placeholder"
+                android:layout_alignStart="@id/tv_region_placeholder"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/lato_regular"
+                android:maxLines="2"
+                android:textAllCaps="false"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="16sp"
+                tools:text="ASIA" />
+
+            <TextView
+                android:id="@+id/tv_lang_placeholder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_country"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/lato_regular"
+                android:text="@string/txt_language"
+                android:textAllCaps="true"
+                android:textColor="@color/colorTextSecondary" />
+
+            <TextView
+                android:id="@+id/tv_language"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_lang_placeholder"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/lato_regular"
+                android:maxLines="2"
+                android:textAllCaps="false"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="16sp"
+                tools:text="English" />
+
+            <TextView
+                android:id="@+id/tv_time_zone_placeholder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_region"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_toEndOf="@id/tv_country_placeholder"
+                android:fontFamily="@font/lato_regular"
+                android:text="@string/txt_time_zone"
+                android:textAllCaps="true"
+                android:textColor="@color/colorTextSecondary" />
+
+            <TextView
+                android:id="@+id/tv_time_zone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_time_zone_placeholder"
+                android:layout_alignStart="@id/tv_time_zone_placeholder"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/lato_regular"
+                android:maxLines="2"
+                android:textAllCaps="false"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="16sp"
+                tools:text="+5:30" />
+
+            <View
+                android:id="@+id/v_divider_1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/tv_time_zone"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:alpha="0.2"
+                android:background="@color/colorTextSecondary" />
+
+            <ImageView
+                android:id="@+id/iv_weather"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/v_divider_1"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/ic_cloud" />
+
+
+            <TextView
+                android:id="@+id/tv_weather_placeholder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/v_divider_1"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/lato_regular"
+                android:text="@string/txt_weather"
+                android:textAllCaps="true"
+                android:textColor="@color/colorTextSecondary" />
+
+            <TextView
+                android:id="@+id/tv_weather"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_weather_placeholder"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="60dp"
+                android:fontFamily="@font/lato_regular"
+                android:maxLines="2"
+                android:textAllCaps="false"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="16sp"
+                tools:text="Lots of snow here. A great day for hot chocolate!" />
+
+            <TextView
+                android:id="@+id/tv_temprature_placeholder"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_weather"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/lato_regular"
+                android:text="@string/txt_temprature"
+                android:textAllCaps="true"
+                android:textColor="@color/colorTextSecondary" />
+
+            <TextView
+                android:id="@+id/tv_temprature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_temprature_placeholder"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/lato_regular"
+                android:maxLines="2"
+                android:textAllCaps="false"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="16sp"
+                tools:text="-3 Celcius" />
+
+
+            <View
+                android:id="@+id/v_divider_2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/tv_temprature"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:alpha="0.2"
+                android:background="@color/colorTextSecondary" />
+
+            <ImageView
+                android:id="@+id/iv_travel"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/v_divider_2"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/ic_local_play" />
+
+            <TextView
+                android:id="@+id/tv_travel_placeholder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/v_divider_2"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/lato_regular"
+                android:text="@string/txt_travel"
+                android:textAllCaps="true"
+                android:textColor="@color/colorTextSecondary" />
+
+            <TextView
+                android:id="@+id/tv_travel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_travel_placeholder"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/lato_regular"
+                android:maxLines="2"
+                android:text="Link to Travel Guide >>"
+                android:textAllCaps="false"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>

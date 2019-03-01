@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:gravity="center">
+
+    <Button
+        android:id="@+id/btn_search_flight_on_routes"
+        style="@style/KLMButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:alpha="0"
+        android:text="@string/txt_search_flight_on_routes"
+        android:translationY="-100dp" />
+
+
+    <Button
+        android:id="@+id/btn_search_flight_status"
+        style="@style/KLMButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_below="@id/btn_search_flight_on_routes"
+        android:layout_centerHorizontal="true"
+        android:alpha="0"
+        android:text="@string/txt_search_flight_status" />
+
+    <Button
+        android:id="@+id/btn_search_destination"
+        style="@style/KLMButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_search_flight_status"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:alpha="0"
+        android:text="@string/txt_search_destination"
+        android:translationY="100dp" />
+
+</RelativeLayout>

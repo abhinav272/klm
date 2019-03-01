@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp"
+    android:layout_marginBottom="5dp"
+    android:backgroundTint="@color/colorLightBackground"
+    android:background="@drawable/bg_round_corner">
+
+    <ImageView
+        android:id="@+id/iv_icon"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_flights"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_airline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/lato_regular"
+        android:textColor="@color/colorTextPrimary"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/iv_icon"
+        app:layout_constraintStart_toEndOf="@id/iv_icon"
+        app:layout_constraintTop_toTopOf="@id/iv_icon"
+        tools:text="KLM Airlines" />
+
+
+    <TextView
+        android:id="@+id/tv_airline_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="@font/lato_regular"
+        android:textColor="@color/colorAccent"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/iv_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/iv_icon"
+        tools:text="ON-TIME" />
+
+
+    <TextView
+        android:id="@+id/tv_takeoff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:drawableStart="@drawable/ic_flight_takeoff"
+        android:drawablePadding="8dp"
+        android:fontFamily="@font/lato_light"
+        android:textColor="@color/colorTextSecondary"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/iv_icon"
+        app:layout_constraintTop_toBottomOf="@id/iv_icon"
+        tools:text="08:35 BOM" />
+
+
+    <TextView
+        android:id="@+id/tv_landing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:drawableStart="@drawable/ic_flight_land"
+        android:drawablePadding="8dp"
+        android:fontFamily="@font/lato_light"
+        android:textColor="@color/colorTextSecondary"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_icon"
+        tools:text="14:25 IST" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginEnd="7dp"
+        android:background="@color/colorTextSecondary"
+        app:layout_constraintBottom_toBottomOf="@id/tv_takeoff"
+        app:layout_constraintEnd_toStartOf="@id/tv_landing"
+        app:layout_constraintStart_toEndOf="@id/tv_takeoff"
+        app:layout_constraintTop_toTopOf="@id/tv_takeoff" />
+
+    <TextView
+        android:id="@+id/tv_journey_time_placeholder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/lato_light"
+        android:text="@string/txt_journey"
+        android:textColor="@color/colorTextSecondary"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/tv_takeoff"
+        app:layout_constraintTop_toBottomOf="@id/tv_takeoff" />
+
+
+    <TextView
+        android:id="@+id/tv_journey_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/lato_light"
+        android:textColor="@color/colorTextPrimary"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@id/tv_journey_time_placeholder"
+        app:layout_constraintTop_toBottomOf="@id/tv_takeoff"
+        tools:text="3h 20m" />
+
+
+    <TextView
+        android:id="@+id/tv_departure_gate_placeholder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="7dp"
+        android:fontFamily="@font/lato_light"
+        android:text="@string/txtdep_gate"
+        android:textColor="@color/colorTextSecondary"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@id/tv_departure_gate"
+        app:layout_constraintTop_toBottomOf="@id/tv_takeoff" />
+
+
+    <TextView
+        android:id="@+id/tv_departure_gate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/lato_light"
+        android:textColor="@color/colorTextPrimary"
+        android:textSize="14sp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_takeoff"
+        tools:text="2D" />
+
+</android.support.constraint.ConstraintLayout>
